@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Exit if any subcommand fails
+set -e
+set -o pipefail
+
+source script/helpers/text_helpers
+
+notice "Running System Check"
+./script/system_check
+print_done
+
+notice "Installing node dependencies"
+yarn install --no-progress | indent
+print_done
+
+notice "Installing shards"
+shards check || shards install | indent
+
+if [ ! -f ".env" ]; then
+  notice "No .env found. Creating one."
+  touch .env
+  print_done
+fi
+
+print_done
+
+notice "Resetting docker-compose"
+docker compose down --volumes
+docker compose up -d
+print_done
+
+notice "Setting up Database"
+
+lucky db.drop
+lucky db.setup
+
+lucky db.seed.required_data
+lucky db.seed.sample_data
+
+print_done

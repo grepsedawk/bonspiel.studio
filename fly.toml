@@ -1,0 +1,60 @@
+# fly.toml file generated for bonspielium on 2022-01-22T00:43:34-06:00
+
+app = "bonspielium"
+
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[deploy]
+  release_command = "lucky db.migrate"
+
+[env]
+  LUCKY_ENV = "production"
+  APP_DOMAIN = "bonspiel.studio"
+
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
+
+[[services]]
+  internal_port = 8080
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+
+  # [[services.http_checks]]
+  #   interval = 10000
+  #   grace_period = "5s"
+  #   method = "get"
+  #   path = "/ping"
+  #   protocol = "http"
+  #   timeout = 2000
+  #   tls_skip_verify = false
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"
+
+  [[statics]]
+    guest_path = "/app/public/css"
+    url_prefix = "/css"
+
+  [[statics]]
+    guest_path = "/app/public/js"
+    url_prefix = "/js"

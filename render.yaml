@@ -1,0 +1,27 @@
+databases:
+  - name: Bonspiel Studio Primary
+    databaseName: bonspiel_studio
+    user: bonspiel_studio
+    ipAllowList: []
+
+services:
+  - type: web
+    name: Bonspiel Studio
+    env: docker
+    dockerfilePath: "./dockerfiles/webserver.Dockerfile"
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: Bonspiel Studio Primary
+          property: connectionString
+      - key: LUCKY_ENV
+        value: production
+      - key: NODE_ENV
+        value: production
+      - key: APP_DOMAIN
+        sync: false
+      - key: SECRET_KEY_BASE
+        sync: false
+      - key: SEND_GRID_KEY
+        sync: false
