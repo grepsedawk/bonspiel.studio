@@ -6,5 +6,6 @@ class Bonspiels::FormFields < BaseComponent
 
     mount Shared::Field, operation.start_at, &.date_input
     mount Shared::Field, operation.end_at, &.date_input
+    mount Shared::Field, operation.sheets, &.number_input(min: 0)
   end
 end
