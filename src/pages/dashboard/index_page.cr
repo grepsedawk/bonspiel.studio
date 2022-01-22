@@ -1,4 +1,6 @@
 class Dashboard::IndexPage < MainLayout
+  needs bonspiels : BonspielQuery
+
   def page_title
     "Dashboard"
   end
@@ -10,7 +12,16 @@ class Dashboard::IndexPage < MainLayout
       end
 
       div class: "px-4 py-5 sm:p-6" do
-        h3 "We should put some content here..."
+        h2 "Upcoming and Ongoing"
+        ul do
+          bonspiels.each do |bonspiel|
+            li do
+              link bonspiel.name, Bonspiels::Show.with(bonspiel)
+            end
+          end
+        end
+
+        link "New Bonspiel", to: Bonspiels::New
       end
     end
   end

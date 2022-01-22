@@ -9,6 +9,7 @@ class User < BaseModel
     column first_name : String?
     column last_name : String?
     column encrypted_password : String
+    has_many bonspiels : Bonspiel
   end
 
   def full_name : String?

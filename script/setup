@@ -25,3 +25,9 @@ fi
 
 print_done
 notice "Run 'crystal run .jumpstart/init.cr' to finish the setup"
+
+lucky db.drop
+lucky db.setup
+
+lucky db.seed.required_data
+lucky db.seed.sample_data
