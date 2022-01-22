@@ -16,11 +16,11 @@ class Marketing::IndexPage < AuthLayout
           main class: "pt-10 mx-auto max-w-7xl px-4 sm:pt-12 sm:px-6 md:pt-16 lg:pt-20 lg:px-8 xl:pt-28" do
             div class: "sm:text-center lg:text-left" do
               h1 class: "text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl" do
-                span "Jumpstart your", class: "block xl:inline"
-                span " Lucky development", class: "block text-primary-600 xl:inline"
+                span "Broadcast your", class: "block xl:inline"
+                span " Bonspiel", class: "block text-primary-600 xl:inline"
               end
               para class: "mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" do
-                text " Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. "
+                text "With Bonspiel Studio, have all the tools you need to broadcast your bonspiel all in one place."
               end
               div class: "mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start" do
                 div class: "rounded-md shadow" do
@@ -48,11 +48,11 @@ class Marketing::IndexPage < AuthLayout
           h2 "Features", class: "text-base text-primary-600 font-semibold tracking-wide uppercase"
 
           para class: "mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl" do
-            text "The Swiss army knife of Lucky apps"
+            text "The Swiss army knife of Bonspiel Studios"
           end
 
           para class: "mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto" do
-            text " Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam. "
+            text "From bracket management to scoreboard streaming, we have you covered!"
           end
         end
         div class: "mt-10" do
@@ -67,10 +67,10 @@ class Marketing::IndexPage < AuthLayout
               end
               div class: "ml-4" do
                 dt class: "text-lg leading-6 font-medium text-gray-900" do
-                  text "TailwindCSS ready to use"
+                  text "Access from Anywhere"
                 end
                 dd class: "mt-2 text-base text-gray-500" do
-                  text " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. "
+                  text "No need to setup a local server to host Bonspiel Studio. Bonspiel Studio is available worldwide."
                 end
               end
             end
@@ -84,10 +84,10 @@ class Marketing::IndexPage < AuthLayout
               end
               div class: "ml-4" do
                 dt class: "text-lg leading-6 font-medium text-gray-900" do
-                  text "Docker out of the box"
+                  text "Track Score in Real Time"
                 end
                 dd class: "mt-2 text-base text-gray-500" do
-                  text " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. "
+                  text "With the main Bonspiel dashboard, track the score in real time to be presented on stream."
                 end
               end
             end
@@ -101,10 +101,10 @@ class Marketing::IndexPage < AuthLayout
               end
               div class: "ml-4" do
                 dt class: "text-lg leading-6 font-medium text-gray-900" do
-                  text "Email confirmations included"
+                  text "Bonspiel Wizard"
                 end
                 dd class: "mt-2 text-base text-gray-500" do
-                  text " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. "
+                  text "With the bonspiel wizard, automatically break the tournament into automatic event tracking. Teams can know when they play next as soon as their game is over!"
                 end
               end
             end
@@ -121,7 +121,7 @@ class Marketing::IndexPage < AuthLayout
                   text "Get running fast!"
                 end
                 dd class: "mt-2 text-base text-gray-500" do
-                  text " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. "
+                  text "Very easy, simple configuration to get to streaming without the need for a fully managed bonspiel."
                 end
               end
             end
