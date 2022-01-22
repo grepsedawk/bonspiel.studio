@@ -3,8 +3,8 @@ require "spark"
 class Jumpstart::Init
   getter prompt : Spark::Prompt = Spark::Prompt.new
   getter bullet_list_icon : String = "💎"
-  getter default_programmatic_app_name : String = "lucky_jumpstart"
-  getter default_human_app_name : String = "Lucky Jumpstart"
+  getter default_programmatic_app_name : String = "bonspiel_studio"
+  getter default_human_app_name : String = "Bonspiel Studio"
 
   def call
     prompt.say "🚀 Welcome to #{default_human_app_name}!", color: :yellow, style: :bold

@@ -1,19 +1,19 @@
 databases:
-  - name: Lucky Jumpstart Primary
-    databaseName: lucky_jumpstart
-    user: lucky_jumpstart
+  - name: Bonspiel Studio Primary
+    databaseName: bonspiel_studio
+    user: bonspiel_studio
     ipAllowList: []
 
 services:
   - type: web
-    name: Lucky Jumpstart
+    name: Bonspiel Studio
     env: docker
     dockerfilePath: "./dockerfiles/webserver.Dockerfile"
     healthCheckPath: /
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: Lucky Jumpstart Primary
+          name: Bonspiel Studio Primary
           property: connectionString
       - key: LUCKY_ENV
         value: production
