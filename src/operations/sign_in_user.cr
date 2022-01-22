@@ -27,11 +27,6 @@ class SignInUser < Avram::Operation
   #    end
   private def validate_credentials(user)
     if user
-      unless user.confirmed?
-        email.add_error "is not confirmed"
-        return
-      end
-
       unless Authentic.correct_password?(user, password.value.to_s)
         password.add_error "is wrong"
         return
