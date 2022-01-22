@@ -11,6 +11,7 @@ processes = []
 
 [env]
   LUCKY_ENV = "production"
+  APP_DOMAIN = "bonspiel.studio"
 
 [experimental]
   allowed_public_ports = []

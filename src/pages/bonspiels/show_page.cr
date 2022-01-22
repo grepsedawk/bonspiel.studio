@@ -35,13 +35,13 @@ class Bonspiels::ShowPage < MainLayout
         max: bonspiel.end_at.to_json.strip('"').strip("Z")
       )
 
-      submit "Add Draw", data_disable_with: "Saving..."
+      submit "Add Draw", data_disable_with: "Saving...", class: "btn btn-success"
     end
 
     ul do
       bonspiel.draws.each do |draw|
         li do
-          text draw.to_s
+          link draw.to_s, to: ::Draws::Show.with(draw_id: draw.id)
         end
       end
     end
