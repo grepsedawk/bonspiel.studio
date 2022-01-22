@@ -41,3 +41,11 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
+
+  [[statics]]
+    guest_path = "/app/public/css"
+    url_prefix = "/css"
+
+  [[statics]]
+    guest_path = "/app/public/js"
+    url_prefix = "/js"
