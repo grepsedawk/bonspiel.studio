@@ -15,7 +15,7 @@ abstract class AuthLayout
   def render
     html_doctype
 
-    html lang: "en" do
+    html lang: "en", data_theme: "light" do
       mount Shared::LayoutHead, page_title: page_title
 
       body class: "font-inter" do
