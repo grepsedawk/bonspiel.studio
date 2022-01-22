@@ -10,6 +10,8 @@ class CreateBonspiels::V20220122011439 < Avram::Migrator::Migration::V1
 
       add_belongs_to owner : User, on_delete: :cascade
     end
+
+    create_index :bonspiels, [:owner_id, :name], unique: true
   end
 
   def rollback

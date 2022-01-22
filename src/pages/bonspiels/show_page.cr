@@ -30,6 +30,7 @@ class Bonspiels::ShowPage < MainLayout
     h3 "Create New Draw"
     form_for Draws::Create.with bonspiel_id: bonspiel.id do
       mount Shared::Field, SaveDraw.new.start_at, &.datetime_input(
+        value: bonspiel.start_at.to_json.strip('"').strip("Z"),
         min: bonspiel.start_at.to_json.strip('"').strip("Z"),
         max: bonspiel.end_at.to_json.strip('"').strip("Z")
       )

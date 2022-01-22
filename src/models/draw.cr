@@ -1,6 +1,6 @@
 class Draw < BaseModel
   table do
-    column start_at : Time
+    column start_at : Time # TODO UK start_at + bonspiel_id, force within bonspiel
     belongs_to bonspiel : Bonspiel
   end
 

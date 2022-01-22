@@ -16,7 +16,7 @@ class Dashboard::IndexPage < MainLayout
         ul do
           bonspiels.each do |bonspiel|
             li do
-              link bonspiel.name, Bonspiels::Show.with(bonspiel)
+              link bonspiel.to_s, Bonspiels::Show.with(bonspiel)
             end
           end
         end

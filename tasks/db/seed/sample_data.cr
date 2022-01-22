@@ -23,9 +23,27 @@ class Db::Seed::SampleData < LuckyTask::Task
     # only create the record if it doesn't exist yet:
     #
     # ```
-    # if UserQuery.new.email("me@example.com").none?
-    #   SignUpUser.create!(email: "me@example.com", password: "test123", password_confirmation: "test123")
-    # end
+    if UserQuery.new.email("admin@localhost").none?
+      SignUpUser.create!(
+        email: "admin@localhost",
+        password: "demo123",
+        password_confirmation: "demo123"
+      ).tap do |user|
+        SaveBonspiel.create!(
+          name: "Test Bonspiel",
+          start_at: Time.utc,
+          end_at: Time.utc + 3.days,
+          owner_id: user.id
+        ).tap do |bonspiel|
+          10.times do |n|
+            SaveDraw.create!(
+              start_at: Time.utc + n.minutes * 15,
+              bonspiel_id: bonspiel.id
+            )
+          end
+        end
+      end
+    end
     # ```
     puts "Done adding sample data"
   end

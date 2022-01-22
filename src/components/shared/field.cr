@@ -65,7 +65,7 @@ class Shared::Field(T) < BaseComponent
   end
 
   private def input_classes
-    base_classes = "block w-full sm:text-sm rounded-md"
+    base_classes = "block sm:text-sm rounded-md"
 
     valid_classes = "#{base_classes} focus:ring-primary-500 focus:border-primary-500 border-gray-300"
     error_classes = "#{base_classes} pr-10 border-red-300 text-red-700 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500"

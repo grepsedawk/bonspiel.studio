@@ -7,6 +7,8 @@ class CreateDraws::V20220122042630 < Avram::Migrator::Migration::V1
       add start_at : Time
       add_belongs_to bonspiel : Bonspiel, on_delete: :cascade
     end
+
+    create_index :draws, [:bonspiel_id, :start_at], unique: true
   end
 
   def rollback
