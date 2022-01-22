@@ -4,7 +4,7 @@ class Bonspiels::FormFields < BaseComponent
   def render
     mount Shared::Field, operation.name, &.text_input(autofocus: "true")
 
-    mount Shared::Field, operation.start_at, &.datetime_input
-    mount Shared::Field, operation.end_at, &.datetime_input
+    mount Shared::Field, operation.start_at, &.date_input
+    mount Shared::Field, operation.end_at, &.date_input
   end
 end

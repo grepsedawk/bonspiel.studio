@@ -4,6 +4,7 @@ class Bonspiel < BaseModel
     column start_at : Time
     column end_at : Time
     belongs_to owner : User
+    has_many draws : Draw
   end
 
   def to_s
