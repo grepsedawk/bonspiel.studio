@@ -9,10 +9,9 @@ class Bonspiels::NewPage < MainLayout
 
   def render_bonspiel_form(op)
     form_for Bonspiels::Create do
-      # Edit fields in src/components/bonspiels/form_fields.cr
       mount Bonspiels::FormFields, op
 
-      submit "Save", data_disable_with: "Saving..."
+      submit "Save", data_disable_with: "Saving...", class: "btn btn-success"
     end
   end
 end
