@@ -33,7 +33,8 @@ class Db::Seed::SampleData < LuckyTask::Task
           name: "Test Bonspiel",
           start_at: Time.utc,
           end_at: Time.utc + 3.days,
-          owner_id: user.id
+          owner_id: user.id,
+          sheets: 5
         ).tap do |bonspiel|
           10.times do |n|
             SaveDraw.create!(

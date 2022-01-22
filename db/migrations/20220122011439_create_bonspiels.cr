@@ -7,6 +7,7 @@ class CreateBonspiels::V20220122011439 < Avram::Migrator::Migration::V1
       add name : String
       add start_at : Time
       add end_at : Time
+      add sheets : Int16
 
       add_belongs_to owner : User, on_delete: :cascade
     end

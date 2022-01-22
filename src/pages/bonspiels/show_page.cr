@@ -35,7 +35,7 @@ class Bonspiels::ShowPage < MainLayout
         max: bonspiel.end_at.to_json.strip('"').strip("Z")
       )
 
-      submit "Save", data_disable_with: "Saving..."
+      submit "Add Draw", data_disable_with: "Saving..."
     end
 
     ul do

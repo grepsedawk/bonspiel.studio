@@ -15,7 +15,7 @@ yarn install --no-progress | indent
 print_done
 
 notice "Installing shards"
-shards install | indent
+shards check || shards install | indent
 
 if [ ! -f ".env" ]; then
   notice "No .env found. Creating one."
