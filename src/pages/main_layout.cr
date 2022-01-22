@@ -11,7 +11,7 @@ abstract class MainLayout
   def render
     html_doctype
 
-    html lang: "en" do
+    html lang: "en", data_theme: "light" do
       mount Shared::LayoutHead, page_title: page_title
 
       body class: "font-inter min-h-screen bg-gray-100" do

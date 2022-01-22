@@ -17,6 +17,7 @@ import { Application } from "@hotwired/stimulus";
 
 import HelloController from "./controllers/hello_controller";
 import RemovableController from "./controllers/removable_controller";
+import DateRangeController from "./controllers/date_range_controller";
 import ToggleController from "./controllers/toggle_controller";
 
 declare global {
@@ -29,3 +30,4 @@ let Stimulus = (window.Stimulus = Application.start());
 Stimulus.register("hello", HelloController);
 Stimulus.register("toggle", ToggleController);
 Stimulus.register("removable", RemovableController);
+Stimulus.register("date_range", DateRangeController);

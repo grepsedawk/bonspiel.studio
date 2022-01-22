@@ -14,7 +14,7 @@ class Bonspiels::EditPage < MainLayout
       # Edit fields in src/components/bonspiels/form_fields.cr
       mount Bonspiels::FormFields, op
 
-      submit "Update", data_disable_with: "Updating..."
+      submit "Update", data_disable_with: "Updating...", class: "btn btn-primary"
     end
   end
 end

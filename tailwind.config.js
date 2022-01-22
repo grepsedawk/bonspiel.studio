@@ -18,5 +18,6 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
     require("tailwindcss-font-inter"),
+    require('daisyui'),
   ],
 };

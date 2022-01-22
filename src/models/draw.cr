@@ -5,6 +5,6 @@ class Draw < BaseModel
   end
 
   def to_s
-    start_at.to_s
+    start_at.in(Time::Location.load("America/Chicago")).to_s
   end
 end
