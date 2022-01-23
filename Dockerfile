@@ -36,7 +36,7 @@ RUN mv ./bin/webserver /usr/local/bin/webserver
 # Serve the application binary
 FROM alpine as webserver
 WORKDIR /app
-RUN apk --no-cache add postgresql-client
+RUN apk --no-cache add postgresql-client tzdata
 COPY --from=lucky_tasks_build /usr/local/bin/lucky /usr/local/bin/lucky
 COPY --from=lucky_webserver_build /usr/local/bin/webserver webserver
 COPY --from=asset_build /assets/public public
