@@ -5,9 +5,6 @@ class Draws::ShowPage < MainLayout
   def content
     render_breadcrumbs
     render_switcher
-    para do
-      text draw.start_at.in(Time::Location.load("America/Chicago")).to_s
-    end
   end
 
   def render_breadcrumbs
