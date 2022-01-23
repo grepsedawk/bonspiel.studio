@@ -14,9 +14,9 @@ class SignUps::NewPage < AuthLayout
   private def render_form(op)
     form_for SignUps::Create do
       div class: "space-y-6" do
-        mount Shared::Field, op.email, "Email", &.email_input(autofocus: "true", placeholder: "you@example.com")
-        mount Shared::Field, op.password, "Password", &.password_input(placeholder: "*" * 12)
-        mount Shared::Field, op.password_confirmation, "Confirm Password", &.password_input(placeholder: "*" * 12)
+        mount Shared::Field, op.email, "Email", &.email_input(autofocus: "true", append_class: "w-full")
+        mount Shared::Field, op.password, "Password", &.password_input(append_class: "w-full")
+        mount Shared::Field, op.password_confirmation, "Confirm Password", &.password_input(append_class: "w-full")
       end
 
       div class: "mt-6" do
