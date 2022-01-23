@@ -7,5 +7,5 @@ end
 
 Application.configure do |settings|
   settings.name = "Bonspiel Studio"
-  settings.support_email = Carbon::Address.new(settings.name, "no-reply@bonspiel_studio.com")
+  settings.support_email = Carbon::Address.new(settings.name, "no-reply@bonspiel.studio")
 end
