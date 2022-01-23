@@ -4,7 +4,7 @@ BaseEmail.configure do |settings|
     #
     # If you *do* plan to send emails, you'll need to use a Carbon Adapter. Check out a list of adapters here:
     # https://github.com/luckyframework/carbon#adapters
-    settings.adapter = Carbon::DevAdapter.new
+    settings.adapter = Carbon::SendGridAdapter.new(api_key: ENV["SEND_GRID_KEY"])
   elsif LuckyEnv.development?
     settings.adapter = Carbon::DevAdapter.new(print_emails: true)
   else
