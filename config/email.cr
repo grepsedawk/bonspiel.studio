@@ -1,3 +1,5 @@
+require "carbon_sendgrid_adapter"
+
 BaseEmail.configure do |settings|
   if LuckyEnv.production?
     # If you don't plan to send emails from production, leave this as it is.

@@ -28,6 +28,10 @@ shards:
     git: https://github.com/luckyframework/carbon.git
     version: 0.2.0
 
+  carbon_sendgrid_adapter:
+    git: https://github.com/luckyframework/carbon_sendgrid_adapter.git
+    version: 0.2.0
+
   cry:
     git: https://github.com/luckyframework/cry.git
     version: 0.4.3
