@@ -5,15 +5,13 @@ class Bonspiels::EditPage < MainLayout
 
   def content
     render_breadcrumbs
-    link "Back to all Bonspiels", Bonspiels::Index
-    h1 "Edit Bonspiel with id: #{bonspiel.id}"
     render_bonspiel_form(operation)
   end
 
   def render_breadcrumbs
     mount Shared::Breadcrumbs do
       li do
-        link "Bonspiel: #{bonspiel.name}", Bonspiels::Show.with(bonspiel.id)
+        link "Bonspiel: #{bonspiel.name} (#{bonspiel.id})", Bonspiels::Show.with(bonspiel.id)
       end
       li do
         link "Edit", Bonspiels::Edit.with(bonspiel.id)
@@ -26,7 +24,7 @@ class Bonspiels::EditPage < MainLayout
       # Edit fields in src/components/bonspiels/form_fields.cr
       mount Bonspiels::FormFields, op
 
-      submit "Update", data_disable_with: "Updating...", class: "btn btn-primary"
+      submit "Update", data_disable_with: "Updating...", class: "btn btn-primary mt-6"
     end
   end
 end

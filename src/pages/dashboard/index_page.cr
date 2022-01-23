@@ -11,17 +11,21 @@ class Dashboard::IndexPage < MainLayout
         h1 "Your Dashboard", class: "font-medium text-lg"
       end
 
-      div class: "px-4 py-5 sm:p-6" do
-        h2 "Upcoming and Ongoing"
-        ul do
-          bonspiels.each do |bonspiel|
-            li do
-              link bonspiel.to_s, Bonspiels::Show.with(bonspiel), class: "link"
+      div class: "card shadow" do
+        div class: "card-body" do
+          h2 "Upcoming and Ongoing", class: "card-title"
+          ul do
+            bonspiels.each do |bonspiel|
+              li do
+                link bonspiel.to_s, Bonspiels::Show.with(bonspiel), class: "link"
+              end
+            end
+            div class: "card-actions" do
+              link "New Bonspiel", to: Bonspiels::New, class: "btn btn-primary"
+              link "See All", to: Bonspiels::Index, class: "btn btn-ghost"
             end
           end
         end
-
-        link "New Bonspiel", to: Bonspiels::New, class: "link link-accent"
       end
     end
   end

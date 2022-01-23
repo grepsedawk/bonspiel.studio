@@ -4,7 +4,6 @@ class Bonspiels::ShowPage < MainLayout
 
   def content
     render_breadcrumbs
-    h1 "Bonspiel with id: #{bonspiel.id}"
     render_actions
     render_bonspiel_fields
     render_draws
@@ -41,13 +40,16 @@ class Bonspiels::ShowPage < MainLayout
   def render_draws
     h3 "Create New Draw"
     form_for Draws::Create.with bonspiel_id: bonspiel.id do
-      mount Shared::Field, SaveDraw.new.start_at, &.datetime_input(
-        value: bonspiel.start_at.to_json.strip('"').strip("Z"),
-        min: bonspiel.start_at.to_json.strip('"').strip("Z"),
-        max: bonspiel.end_at.to_json.strip('"').strip("Z")
-      )
-
-      submit "Add Draw", data_disable_with: "Saving...", class: "btn btn-success"
+      div class: "relative max-w-xs" do
+        datetime_input(
+          SaveDraw.new.start_at,
+          value: bonspiel.start_at.to_json.strip('"').strip("Z"),
+          min: bonspiel.start_at.to_json.strip('"').strip("Z"),
+          max: bonspiel.end_at.to_json.strip('"').strip("Z"),
+          class: "w-full pr-16 input input-primary input-bordered"
+        )
+        submit "Add Draw", data_disable_with: "Saving...", class: "absolute top-0 right-0 rounded-l-none btn btn-primary"
+      end
     end
 
     ul do
