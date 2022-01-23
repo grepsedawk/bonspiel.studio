@@ -4,6 +4,10 @@ shards:
     git: https://github.com/crystal-ameba/ameba.git
     version: 0.14.3
 
+  any_hash:
+    git: https://github.com/sija/any_hash.cr.git
+    version: 0.2.5
+
   authentic:
     git: https://github.com/luckyframework/authentic.git
     version: 0.8.1
@@ -87,6 +91,10 @@ shards:
   pulsar:
     git: https://github.com/luckyframework/pulsar.git
     version: 0.2.2
+
+  raven:
+    git: https://github.com/sija/raven.cr.git
+    version: 1.9.1
 
   selenium:
     git: https://github.com/matthewmcgarvey/selenium.cr.git
