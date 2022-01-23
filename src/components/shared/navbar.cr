@@ -3,7 +3,7 @@ class Shared::Navbar < BaseComponent
   needs simple : Bool = false
 
   def render
-    nav class: "bg-white shadow", data_controller: "toggle" do
+    nav class: "shadow", data_controller: "toggle" do
       div class: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" do
         div class: "flex justify-between items-center h-16" do
           render_left_navbar
@@ -33,7 +33,7 @@ class Shared::Navbar < BaseComponent
   end
 
   private def render_logo
-    link "Bonspiel Studio", to: Home::Index, class: "leading-8 font-extrabold tracking-tight text-gray-900 text-xl sm:leading-10 hover:text-gray-600"
+    link "Bonspiel Studio", to: Home::Index, class: "leading-8 font-extrabold tracking-tight text-xl sm:leading-10"
   end
 
   private def render_hamburger_icon
@@ -64,7 +64,7 @@ class Shared::Navbar < BaseComponent
 
   private def render_right_navbar(user : User)
     div class: "hidden sm:flex sm:space-x-2 items-center" do
-      link user.email, to: Me::Edit, class: "text-sm font-medium text-gray-900 hover:text-gray-600"
+      link user.email, to: Me::Edit, class: "link-hover"
 
       mount UI::Button, &.link("Sign Out", to: SignIns::Delete, flow_id: "nav-sign-out-button")
     end

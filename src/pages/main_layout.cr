@@ -11,10 +11,10 @@ abstract class MainLayout
   def render
     html_doctype
 
-    html lang: "en", data_theme: "light" do
+    html lang: "en" do
       mount Shared::LayoutHead, page_title: page_title
 
-      body class: "font-inter min-h-screen bg-gray-100" do
+      body class: "font-inter min-h-screen" do
         mount Shared::Navbar, user: current_user
         mount Shared::FlashMessages, context.flash
 

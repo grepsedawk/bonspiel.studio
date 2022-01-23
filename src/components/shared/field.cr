@@ -36,16 +36,14 @@ class Shared::Field(T) < BaseComponent
   needs label_text : String?
 
   def render
-    div do
+    div class: "form-control" do
       mount Shared::FieldLabel, attribute, label_text
 
-      div do
-        tag_defaults field: attribute, class: input_classes do |input_builder|
-          yield input_builder
-        end
-
-        render_warning_symbol unless attribute.valid?
+      tag_defaults field: attribute, class: input_classes do |input_builder|
+        yield input_builder
       end
+
+      render_warning_symbol unless attribute.valid?
 
       mount Shared::FieldErrors, attribute
     end
@@ -66,7 +64,7 @@ class Shared::Field(T) < BaseComponent
 
   private def input_classes
     if attribute.valid?
-      "input input-info input-bordered"
+      "input input-bordered"
     else
       "input input-error input-bordered"
     end

@@ -3,7 +3,7 @@ class Bonspiels::ShowPage < MainLayout
   quick_def page_title, "Bonspiel with id: #{bonspiel.id}"
 
   def content
-    link "Back to all Bonspiels", Bonspiels::Index
+    link "Back to all Bonspiels", Bonspiels::Index, class: "link link-secondary"
     h1 "Bonspiel with id: #{bonspiel.id}"
     render_actions
     render_bonspiel_fields
@@ -12,11 +12,12 @@ class Bonspiels::ShowPage < MainLayout
 
   def render_actions
     section do
-      link "Edit", Bonspiels::Edit.with(bonspiel.id)
+      link "Edit", Bonspiels::Edit.with(bonspiel.id), class: "link"
       text " | "
       link "Delete",
         Bonspiels::Delete.with(bonspiel.id),
-        data_confirm: "Are you sure?"
+        data_confirm: "Are you sure?",
+        class: "link link-secondary"
     end
   end
 
@@ -41,7 +42,7 @@ class Bonspiels::ShowPage < MainLayout
     ul do
       bonspiel.draws.each do |draw|
         li do
-          link draw.to_s, to: ::Draws::Show.with(draw_id: draw.id)
+          link draw.to_s, to: ::Draws::Show.with(draw_id: draw.id), class: "link"
         end
       end
     end

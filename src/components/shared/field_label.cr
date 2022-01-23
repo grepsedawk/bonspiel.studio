@@ -3,6 +3,6 @@ class Shared::FieldLabel(T) < BaseComponent
   needs label_text : String?
 
   def render
-    label_for attribute, label_text, class: "block text-sm font-medium text-gray-700"
+    label_for attribute, label_text, class: "label label-text"
   end
 end

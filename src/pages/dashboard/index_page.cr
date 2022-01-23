@@ -6,8 +6,8 @@ class Dashboard::IndexPage < MainLayout
   end
 
   def content
-    div class: "bg-white overflow-hidden shadow rounded-lg" do
-      div class: "border-b border-gray-200 px-4 py-5 sm:px-6" do
+    div class: "overflow-hidden rounded-lg" do
+      div class: "px-4 py-5 sm:px-6" do
         h1 "Your Dashboard", class: "font-medium text-lg"
       end
 
@@ -16,12 +16,12 @@ class Dashboard::IndexPage < MainLayout
         ul do
           bonspiels.each do |bonspiel|
             li do
-              link bonspiel.to_s, Bonspiels::Show.with(bonspiel)
+              link bonspiel.to_s, Bonspiels::Show.with(bonspiel), class: "link"
             end
           end
         end
 
-        link "New Bonspiel", to: Bonspiels::New
+        link "New Bonspiel", to: Bonspiels::New, class: "link link-accent"
       end
     end
   end

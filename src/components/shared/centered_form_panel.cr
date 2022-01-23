@@ -8,7 +8,7 @@ class Shared::CenteredFormPanel < BaseComponent
       end
 
       div class: "mt-6 sm:mx-auto sm:w-full sm:max-w-md" do
-        div class: "bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10" do
+        div class: "py-8 px-4 shadow sm:rounded-lg sm:px-10" do
           yield
         end
       end
