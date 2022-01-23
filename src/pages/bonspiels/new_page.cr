@@ -3,8 +3,17 @@ class Bonspiels::NewPage < MainLayout
   quick_def page_title, "New Bonspiel"
 
   def content
+    render_breadcrumbs
     h1 "New Bonspiel"
     render_bonspiel_form(operation)
+  end
+
+  def render_breadcrumbs
+    mount Shared::Breadcrumbs do
+      li do
+        link("New Bonspiel", Bonspiels::New)
+      end
+    end
   end
 
   def render_bonspiel_form(op)

@@ -3,11 +3,22 @@ class Bonspiels::ShowPage < MainLayout
   quick_def page_title, "Bonspiel with id: #{bonspiel.id}"
 
   def content
-    link "Back to all Bonspiels", Bonspiels::Index, class: "link link-secondary"
+    render_breadcrumbs
     h1 "Bonspiel with id: #{bonspiel.id}"
     render_actions
     render_bonspiel_fields
     render_draws
+  end
+
+  def render_breadcrumbs
+    mount Shared::Breadcrumbs do
+      li do
+        link "Bonspiels", Bonspiels::Index
+      end
+      li do
+        link "Bonspiel: #{bonspiel.name}", Bonspiels::Show.with(bonspiel.id)
+      end
+    end
   end
 
   def render_actions

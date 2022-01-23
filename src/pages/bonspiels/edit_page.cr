@@ -4,9 +4,21 @@ class Bonspiels::EditPage < MainLayout
   quick_def page_title, "Edit Bonspiel with id: #{bonspiel.id}"
 
   def content
+    render_breadcrumbs
     link "Back to all Bonspiels", Bonspiels::Index
     h1 "Edit Bonspiel with id: #{bonspiel.id}"
     render_bonspiel_form(operation)
+  end
+
+  def render_breadcrumbs
+    mount Shared::Breadcrumbs do
+      li do
+        link "Bonspiel: #{bonspiel.name}", Bonspiels::Show.with(bonspiel.id)
+      end
+      li do
+        link "Edit", Bonspiels::Edit.with(bonspiel.id)
+      end
+    end
   end
 
   def render_bonspiel_form(op)
