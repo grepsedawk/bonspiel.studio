@@ -2,6 +2,18 @@ class Draw < BaseModel
   table do
     column start_at : Time
     belongs_to bonspiel : Bonspiel
+
+    has_many games : Game
+  end
+
+  def games!
+    return previous_def.sort_by(&.sheet) unless previous_def.empty?
+
+    SaveGame.upsert(
+      bonspiel!.sheets.times.map do |n|
+        {sheet: n.to_i16 + 1, draw_id: self.id}
+      end.to_a
+    )
   end
 
   def to_s

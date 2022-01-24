@@ -4,7 +4,17 @@ class Draws::ShowPage < MainLayout
 
   def content
     render_breadcrumbs
-    render_switcher
+  end
+
+  def render_games
+    draw.games!.each do |game|
+      div class: "card card-bordered mt-6" do
+        div class: "card-body" do
+          h2 "Sheet #{game.sheet}", class: "card-title"
+          para { text "Team 1 vs Team 2" }
+        end
+      end
+    end
   end
 
   def render_breadcrumbs

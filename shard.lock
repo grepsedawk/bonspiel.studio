@@ -1,3 +1,4 @@
+# NOTICE: This lockfile contains some overrides from shard.override.yml
 version: 2.0
 shards:
   ameba:
@@ -12,9 +13,9 @@ shards:
     git: https://github.com/luckyframework/authentic.git
     version: 0.8.1
 
-  avram:
-    git: https://github.com/luckyframework/avram.git
-    version: 0.22.0
+  avram: # Overridden
+    git: https://github.com/robcole/avram.git
+    version: 0.22.0+git.commit.8284f68bd6323b721a57f514b8d8880ad38801ee
 
   backtracer:
     git: https://github.com/sija/backtracer.cr.git
