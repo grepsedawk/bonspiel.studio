@@ -10,12 +10,7 @@ class Draws::ShowPage < MainLayout
 
   def render_games
     draw.games!.each do |game|
-      div class: "card card-bordered mt-6" do
-        div class: "card-body" do
-          h2 "Sheet #{game.sheet}", class: "card-title"
-          para { text "Team 1 vs Team 2" }
-        end
-      end
+      mount Games::EditCard, game: game, operation: SaveGame.new
     end
   end
 

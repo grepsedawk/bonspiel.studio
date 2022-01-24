@@ -6,6 +6,9 @@ class CreateGames::V20220124011336 < Avram::Migrator::Migration::V1
       add_timestamps
 
       add sheet : Int16
+      add team_a_score : Int16, default: 0
+      add team_b_score : Int16, default: 0
+      add current_end : Int16, default: 0
 
       add_belongs_to draw : Draw, on_delete: :cascade
     end

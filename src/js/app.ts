@@ -14,6 +14,8 @@ require("turbolinks").start();
 // })
 
 import { Application } from "@hotwired/stimulus";
+import * as Turbo from "@hotwired/turbo"
+export { Turbo }
 
 import HelloController from "./controllers/hello_controller";
 import RemovableController from "./controllers/removable_controller";
