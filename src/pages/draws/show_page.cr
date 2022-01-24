@@ -4,6 +4,7 @@ class Draws::ShowPage < MainLayout
 
   def content
     render_breadcrumbs
+    render_games
   end
 
   def render_games
