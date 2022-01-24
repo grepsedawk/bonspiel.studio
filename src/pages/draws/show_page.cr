@@ -10,7 +10,7 @@ class Draws::ShowPage < MainLayout
 
   def render_games
     draw.games!.each do |game|
-      mount Games::EditCard, game: game, operation: SaveGame.new
+      mount Games::EditCard, game: game, operation: SaveGame.new(game)
     end
   end
 
