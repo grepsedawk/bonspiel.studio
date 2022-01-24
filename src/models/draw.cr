@@ -1,6 +1,6 @@
 class Draw < BaseModel
   table do
-    column start_at : Time # TODO UK start_at + bonspiel_id, force within bonspiel
+    column start_at : Time
     belongs_to bonspiel : Bonspiel
   end
 
@@ -8,11 +8,19 @@ class Draw < BaseModel
     start_at.in(Time::Location.load("America/Chicago")).to_s
   end
 
-  def previous
-    DrawQuery.new.start_at.lt(start_at).start_at.desc_order.first?
+  memoize def previous : Draw?
+    DrawQuery.new
+      .bonspiel_id(bonspiel_id)
+      .start_at.lt(start_at)
+      .start_at.desc_order
+      .first?
   end
 
-  def next
-    DrawQuery.new.start_at.gt(start_at).start_at.asc_order.first?
+  memoize def next : Draw?
+    DrawQuery.new
+      .bonspiel_id(bonspiel_id)
+      .start_at.gt(start_at)
+      .start_at.asc_order
+      .first?
   end
 end
