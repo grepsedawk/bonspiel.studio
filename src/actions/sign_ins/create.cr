@@ -8,7 +8,7 @@ class SignIns::Create < BrowserAction
         Authentic.redirect_to_originally_requested_path(self, fallback: Home::Index)
       else
         flash.failure = "Sign in failed"
-        html NewPage, operation: operation
+        html_with_status NewPage, 418, operation: operation
       end
     end
   end

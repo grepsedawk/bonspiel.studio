@@ -1568,10 +1568,6 @@ toidentifier@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz"
 
-turbolinks@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.npmjs.org/turbolinks/-/turbolinks-5.2.0.tgz"
-
 typescript@^4.5.5:
   version "4.5.5"
   resolved "https://registry.npmjs.org/typescript/-/typescript-4.5.5.tgz"
