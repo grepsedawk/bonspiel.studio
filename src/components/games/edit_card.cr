@@ -9,9 +9,9 @@ class Games::EditCard < BaseComponent
           h2 "Sheet #{game.sheet}", class: "card-title"
           div class: "stats" do
             div class: "stat place-items-center place-content-center" do
-              div "Team A Name", class: "stat-title"
+              mount Games::AutoSavingInput, operation.team_a_name, game: game
               mount Games::IncrementingStatValue, operation.team_a_score, game: game
-              div "Club Name", class: "stat-desc"
+              mount Games::AutoSavingInput, operation.team_a_club_name, game: game, append_class: "stat-desc"
             end
             div class: "stat place-items-center place-content-center" do
               div "End", class: "stat-title"
@@ -21,9 +21,9 @@ class Games::EditCard < BaseComponent
               end
             end
             div class: "stat place-items-center place-content-center" do
-              div "Team B Name", class: "stat-title"
+              mount Games::AutoSavingInput, operation.team_b_name, game: game
               mount Games::IncrementingStatValue, operation.team_b_score, game: game
-              div "Club Name", class: "stat-desc"
+              mount Games::AutoSavingInput, operation.team_b_club_name, game: game, append_class: "stat-desc"
             end
           end
         end

@@ -4,12 +4,12 @@ class Games::IncrementingStatValue(T) < BaseComponent
 
   def render
     div class: "stat-value" do
-      form_for Games::Update.with(game.id), class: "inline" do
+      form_for Games::Update.with(game.id), class: "inline align-middle" do
         hidden_input attribute, value: Math.max(value - 1, 0)
         submit "-", class: "btn btn-circle"
       end
-      text value
-      form_for Games::Update.with(game.id), class: "inline" do
+      span value, class: "align-middle mx-2"
+      form_for Games::Update.with(game.id), class: "inline align-middle" do
         hidden_input attribute, value: value + 1
         submit "+", class: "btn btn-circle"
       end

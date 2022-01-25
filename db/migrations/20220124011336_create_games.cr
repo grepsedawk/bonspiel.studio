@@ -8,6 +8,10 @@ class CreateGames::V20220124011336 < Avram::Migrator::Migration::V1
       add sheet : Int16
       add team_a_score : Int16, default: 0
       add team_b_score : Int16, default: 0
+      add team_a_name : String, default: "Team A"
+      add team_b_name : String, default: "Team B"
+      add team_a_club_name : String?, default: ""
+      add team_b_club_name : String?, default: ""
       add current_end : Int16, default: 0
 
       add_belongs_to draw : Draw, on_delete: :cascade
