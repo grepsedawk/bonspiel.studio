@@ -7,7 +7,12 @@ class Game < BaseModel
     column team_b_name : String
     column team_a_club_name : String?
     column team_b_club_name : String?
+    column team_a_hammer : Bool
     column current_end : Int16
     belongs_to draw : Draw
+  end
+
+  def team_b_hammer?
+    !team_a_hammer?
   end
 end

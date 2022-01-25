@@ -11,9 +11,10 @@ class Games::EditCard < BaseComponent
             div class: "stat place-items-center place-content-center" do
               mount Games::AutoSavingInput, operation.team_a_name, game: game, append_class: "stat-title"
               mount Games::IncrementingStatValue, operation.team_a_score, game: game
-              mount Games::AutoSavingInput, operation.team_a_club_name, game: game, append_class: "stat-desc"
-              div class: "stat-actions" do
-                span "Hammer", class: "btn btn-ascent"
+              mount Games::AutoSavingInput, operation.team_a_club_name, game: game, append_class: "stat-desc", placeholder: "Club Name"
+              form_for Games::Update.with(game.id), class: "stat-actions" do
+                hidden_input operation.team_a_hammer, value: true
+                submit "Hammer", class: "btn #{game.team_a_hammer? ? "btn-primary" : ""}"
               end
             end
             div class: "stat place-items-center place-content-center" do
@@ -29,9 +30,10 @@ class Games::EditCard < BaseComponent
             div class: "stat place-items-center place-content-center" do
               mount Games::AutoSavingInput, operation.team_b_name, game: game, append_class: "stat-title"
               mount Games::IncrementingStatValue, operation.team_b_score, game: game
-              mount Games::AutoSavingInput, operation.team_b_club_name, game: game, append_class: "stat-desc"
-              div class: "stat-actions" do
-                span "Hammer", class: "btn btn-ascent"
+              mount Games::AutoSavingInput, operation.team_b_club_name, game: game, append_class: "stat-desc", placeholder: "Club Name"
+              form_for Games::Update.with(game.id), class: "stat-actions" do
+                hidden_input operation.team_a_hammer, value: false
+                submit "Hammer", class: "btn #{game.team_b_hammer? ? "btn-primary" : ""}"
               end
             end
           end

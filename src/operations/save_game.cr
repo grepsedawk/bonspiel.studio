@@ -8,6 +8,7 @@ class SaveGame < Game::SaveOperation
     team_b_name,
     team_a_club_name,
     team_b_club_name,
+    team_a_hammer,
     current_end
   upsert_unique_on :sheet, :draw_id
 end
