@@ -23,8 +23,16 @@ class Games::EditCard < BaseComponent
               div class: "stat-desc" do
                 text "Good Curling!"
               end
-              div class: "stat-actions" do
-                span "Final", class: "btn btn-secondary"
+              if game.final?
+                form_for Games::Update.with(game.id), class: "stat-actions" do
+                  hidden_input operation.final, value: false
+                  submit "Unfinalize", class: "btn btn-ghost"
+                end
+              else
+                form_for Games::Update.with(game.id), class: "stat-actions" do
+                  hidden_input operation.final, value: true
+                  submit "Finalize", class: "btn btn-secondary", data_confirm: "Are you sure?"
+                end
               end
             end
             div class: "stat place-items-center place-content-center" do
