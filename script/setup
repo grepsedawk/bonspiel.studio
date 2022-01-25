@@ -24,10 +24,18 @@ if [ ! -f ".env" ]; then
 fi
 
 print_done
-notice "Run 'crystal run .jumpstart/init.cr' to finish the setup"
+
+notice "Resetting docker-compose"
+docker compose down --volumes
+docker compose up -d
+print_done
+
+notice "Setting up Database"
 
 lucky db.drop
 lucky db.setup
 
 lucky db.seed.required_data
 lucky db.seed.sample_data
+
+print_done
