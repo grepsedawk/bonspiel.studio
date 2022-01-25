@@ -20,6 +20,7 @@ class ResetPasswordFlow < BaseFlow
   def should_have_sent_reset_email
     with_fake_token do
       user = UserQuery.new.email(email).first
+      sleep 0.2
       PasswordResetRequestEmail.new(user).should be_delivered
     end
   end
