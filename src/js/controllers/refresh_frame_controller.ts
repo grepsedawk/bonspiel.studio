@@ -6,7 +6,7 @@ export default class extends Controller {
       const orig = this.element.src
       this.element.setAttribute('src', "")
       this.element.setAttribute('src', orig)
-    }, 5000);
+    }, 3000);
   }
 
   disconnect() {
