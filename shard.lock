@@ -15,7 +15,7 @@ shards:
 
   avram: # Overridden
     git: https://github.com/robcole/avram.git
-    version: 0.22.0+git.commit.0b1913d179780a633725c4875591c8587abdc177
+    version: 0.22.0+git.commit.b9865cf2437ea31cddce2be94b9f1438c1302c57
 
   backtracer:
     git: https://github.com/sija/backtracer.cr.git
