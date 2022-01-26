@@ -4,4 +4,10 @@ class SaveDraw < Draw::SaveOperation
   #
   permit_columns start_at
   upsert_lookup_columns :bonspiel_id, :start_at
+
+  before_save do
+    start_at.value = start_at.value.try do |time|
+      time.to_local_in(Time::Location.load("America/Chicago"))
+    end
+  end
 end
