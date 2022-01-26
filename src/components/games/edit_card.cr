@@ -7,6 +7,15 @@ class Games::EditCard < BaseComponent
       div class: "card card-bordered mt-6" do
         div class: "card-body" do
           h2 "Sheet #{game.sheet}", class: "card-title"
+          form_for Games::Update.with(game.id) do
+            if game.presenting?
+              hidden_input operation.presenting, value: false
+              submit "Present!", class: "btn btn-success"
+            else
+              hidden_input operation.presenting, value: true
+              submit "Present!", class: "btn btn-error"
+            end
+          end
           div class: "stats grid-flow-col" do
             div class: "stat place-items-center place-content-center" do
               mount Games::AutoSavingInput, operation.team_a_name, game: game, append_class: "stat-title"

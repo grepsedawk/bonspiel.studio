@@ -14,6 +14,7 @@ class CreateGames::V20220124011336 < Avram::Migrator::Migration::V1
       add team_b_club_name : String?, default: ""
       add team_a_hammer : Bool, default: true
       add final : Bool, default: false
+      add presenting : Bool, default: false
       add current_end : Int16, default: 0
 
       add_belongs_to draw : Draw, on_delete: :cascade
