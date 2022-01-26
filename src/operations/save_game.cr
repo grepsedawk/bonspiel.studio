@@ -15,7 +15,7 @@ class SaveGame < Game::SaveOperation
   upsert_unique_on :sheet, :draw_id
 
   before_save do
-    if presenting.value
+    if changes.fetch(:presenting, false) == "true"
       DrawQuery.find(draw_id.value.not_nil!).bonspiel!.games!.each do |game|
         SaveGame.update!(game, presenting: false)
       end
