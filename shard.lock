@@ -15,7 +15,7 @@ shards:
 
   avram: # Overridden
     git: https://github.com/robcole/avram.git
-    version: 0.22.0+git.commit.8284f68bd6323b721a57f514b8d8880ad38801ee
+    version: 0.22.0+git.commit.0b1913d179780a633725c4875591c8587abdc177
 
   backtracer:
     git: https://github.com/sija/backtracer.cr.git
@@ -24,6 +24,10 @@ shards:
   bindata:
     git: https://github.com/spider-gazelle/bindata.git
     version: 1.9.1
+
+  cadmium_transliterator:
+    git: https://github.com/cadmiumcr/transliterator.git
+    version: 0.1.0+git.commit.46c4c14594057dbcfaf27e7e7c8c164d3f0ce3f1
 
   carbon:
     git: https://github.com/luckyframework/carbon.git
