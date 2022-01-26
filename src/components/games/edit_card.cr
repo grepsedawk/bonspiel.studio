@@ -4,10 +4,10 @@ class Games::EditCard < BaseComponent
 
   def render
     tag "turbo-frame", id: "game-#{game.id}" do
-      div class: "card card-bordered mt-6" do
+      div class: "card shadow bg-base-100 mt-6" do
         div class: "card-body" do
           h2 "Sheet #{game.sheet}", class: "card-title"
-          form_for Games::Update.with(game.id) do
+          form_for Games::Update.with(game.id), data_turbo_frame: "_top" do
             if game.presenting?
               hidden_input operation.presenting, value: false
               submit "Present!", class: "btn btn-success"
@@ -16,7 +16,7 @@ class Games::EditCard < BaseComponent
               submit "Present!", class: "btn btn-error"
             end
           end
-          div class: "stats grid-flow-col" do
+          div class: "stats mt-3" do
             div class: "stat place-items-center place-content-center" do
               mount Games::AutoSavingInput, operation.team_a_name, game: game, append_class: "stat-title"
               mount Games::IncrementingStatValue, operation.team_a_score, game: game
