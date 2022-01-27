@@ -7,6 +7,7 @@ class Bonspiel < BaseModel
     belongs_to owner : User
     has_many draws : Draw
     has_many games : Game, through: [:draws, :games]
+    belongs_to presenting_game : Game?
   end
 
   def to_s

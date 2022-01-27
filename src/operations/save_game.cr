@@ -10,15 +10,6 @@ class SaveGame < Game::SaveOperation
     team_b_club_name,
     team_a_hammer,
     current_end,
-    final,
-    presenting
+    final
   upsert_unique_on :sheet, :draw_id
-
-  before_save do
-    if changes.fetch(:presenting, false) == "true"
-      DrawQuery.find(draw_id.value.not_nil!).bonspiel!.games!.each do |game|
-        SaveGame.update!(game, presenting: false)
-      end
-    end
-  end
 end

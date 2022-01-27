@@ -9,8 +9,10 @@ class Draws::ShowPage < MainLayout
   end
 
   def render_games
-    draw.games!.each do |game|
-      mount Games::EditCard, game: game, operation: SaveGame.new(game)
+    tag "turbo-frame", id: "draw-#{draw.id}-games" do
+      draw.games!.each do |game|
+        mount Games::EditCard, game: game, operation: SaveGame.new(game)
+      end
     end
   end
 

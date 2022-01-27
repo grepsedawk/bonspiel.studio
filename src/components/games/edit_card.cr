@@ -7,12 +7,12 @@ class Games::EditCard < BaseComponent
       div class: "card shadow bg-base-100 mt-6" do
         div class: "card-body" do
           h2 "Sheet #{game.sheet}", class: "card-title"
-          form_for Games::Update.with(game.id), data_turbo_frame: "_top" do
+          form_for Games::Presenting::Update.with(game.id), data_turbo_frame: "draw-#{draw.id}-games" do
             if game.presenting?
-              hidden_input operation.presenting, value: false
+              hidden_input SaveBonspiel.new(game.bonspiel!).presenting_game_id, value: ""
               submit "Present!", class: "btn btn-success"
             else
-              hidden_input operation.presenting, value: true
+              hidden_input SaveBonspiel.new(game.bonspiel!).presenting_game_id, value: game.id
               submit "Present!", class: "btn btn-error"
             end
           end
@@ -57,5 +57,9 @@ class Games::EditCard < BaseComponent
         end
       end
     end
+  end
+
+  private def draw : Draw
+    game.draw!
   end
 end

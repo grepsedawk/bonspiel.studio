@@ -10,8 +10,13 @@ class Game < BaseModel
     column team_a_hammer : Bool
     column current_end : Int16
     column final : Bool
-    column presenting : Bool
     belongs_to draw : Draw
+  end
+
+  delegate :bonspiel!, to: :draw!
+
+  def presenting?
+    bonspiel!.presenting_game_id == id
   end
 
   def team_b_hammer?
