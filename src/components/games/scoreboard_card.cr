@@ -2,7 +2,7 @@ class Games::ScoreboardCard < BaseComponent
   needs game : Game
 
   def render
-    tag "turbo-frame", id: "game-#{game.id}-scoreboard" do
+    tag "turbo-frame", id: "game-scoreboard" do
       h2 "Sheet #{game.sheet}"
       div class: "stats" do
         div class: "stat place-items-center place-content-center" do

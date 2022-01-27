@@ -12,7 +12,7 @@ abstract class ScoreboardLayout
         css_link asset("css/app.css")
         js_link asset("js/app.js"), defer: "true"
       end
-      body do
+      body data_controller: "refresh" do
         main do
           content
         end
