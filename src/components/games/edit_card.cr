@@ -16,7 +16,7 @@ class Games::EditCard < BaseComponent
               submit "Present!", class: "btn btn-error"
             end
           end
-          div class: "stats mt-3" do
+          div class: "stats md:grid-flow-col grid-flow-row mt-3" do
             div class: "stat place-items-center place-content-center" do
               mount Games::AutoSavingInput, operation.team_a_name, game: game, append_class: "stat-title"
               mount Games::IncrementingStatValue, operation.team_a_score, game: game
