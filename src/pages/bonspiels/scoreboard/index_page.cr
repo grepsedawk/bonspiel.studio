@@ -3,7 +3,7 @@ class Bonspiels::Scoreboard::IndexPage < ScoreboardLayout
   quick_def :page_title, "Scoreboard"
 
   def content
-    div class: "flex text-center" do
+    div class: "flex text-center gap-2" do
       div class: "btn-group flex-1 flex" do
         hammer_button if game.team_a_hammer?
         div game.team_a_name.to_s, class: "flex-1 btn md:btn-lg lg:btn-xl animate-none"
