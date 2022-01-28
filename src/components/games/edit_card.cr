@@ -26,7 +26,7 @@ class Games::EditCard < BaseComponent
                 submit "Hammer", class: "btn #{game.team_a_hammer? ? "btn-primary" : ""}"
               end
             end
-            div class: "stat place-items-center place-content-center" do
+            div class: "stat place-items-center place-content-center order-last md:order-none" do
               div "End", class: "stat-title"
               mount Games::IncrementingStatValue, operation.current_end, game: game
               div class: "stat-desc" do
