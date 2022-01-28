@@ -1,7 +1,7 @@
 class Games::Update < BrowserAction
   put "/games/:game_id" do
     game = GameQuery.find(game_id)
-    pp! params.to_h
+
     SaveGame.update(game, params) do |operation, updated_game|
       if top?
         redirect Draws::Show.with(game.draw_id)
