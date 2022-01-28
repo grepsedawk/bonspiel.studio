@@ -19,3 +19,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     top: 0;
     width: auto;
 }
+
+@responsive {
+    .btn-xl {
+        @apply px-6 h-16 min-h-16;
+        font-size: 1.35rem;
+    }
+}
