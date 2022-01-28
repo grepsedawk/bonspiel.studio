@@ -11,7 +11,6 @@ abstract class ScoreboardLayout
       head do
         css_link asset("css/app.css")
         js_link asset("js/app.js"), defer: "true"
-        empty_tag "meta", http_equiv: "refresh", content: "30"
       end
       body data_controller: "refresh" do
         main do
