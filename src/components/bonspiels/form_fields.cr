@@ -11,6 +11,10 @@ class Bonspiels::FormFields < BaseComponent
   end
 
   def to_pretty_date_or_empty(attribute)
-    attribute.value.try(&.to_s("%Y-%m-%d")) || ""
+    if val = attribute.value
+      val.in(Time::Location.load("American/Chicago")).try(&.to_s("%Y-%m-%d"))
+    else
+      ""
+    end
   end
 end

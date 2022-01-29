@@ -2,7 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-input[type="date"] {
+input[type="date"],
+input[type="datetime-local"] {
     position: relative;
 }
 

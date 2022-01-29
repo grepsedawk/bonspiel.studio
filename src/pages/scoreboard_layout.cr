@@ -2,7 +2,6 @@ abstract class ScoreboardLayout
   include Lucky::HTMLPage
 
   abstract def content
-  abstract def page_title
 
   def refresh_time : Time::Span
     3.seconds
