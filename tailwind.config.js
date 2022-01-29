@@ -5,12 +5,21 @@ module.exports = {
   content: ["./src/**/*.css", "./src/**/*.cr", "./src/**/*.ts"],
   theme: {
     extend: {
-      colors: {
-        primary: colors.rose,
-      },
-      fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-      },
+        animation: {
+            marquee: 'marquee 31s linear infinite',
+        },
+        keyframes: {
+            marquee: {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(-250%)' },
+            }
+        },
+        colors: {
+            primary: colors.rose,
+        },
+        fontFamily: {
+            sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        },
     },
   },
   plugins: [

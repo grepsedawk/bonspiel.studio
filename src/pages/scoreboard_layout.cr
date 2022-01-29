@@ -4,6 +4,10 @@ abstract class ScoreboardLayout
   abstract def content
   abstract def page_title
 
+  def refresh_time : Time::Span
+    3.seconds
+  end
+
   def render
     html_doctype
 
@@ -12,7 +16,7 @@ abstract class ScoreboardLayout
         css_link asset("css/app.css")
         js_link asset("js/app.js"), defer: "true"
       end
-      body data_controller: "refresh" do
+      body data_controller: "refresh", data_refresh_interval_value: refresh_time.to_i * 1000 do
         main do
           content
         end
