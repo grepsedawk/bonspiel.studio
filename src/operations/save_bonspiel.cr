@@ -15,7 +15,7 @@ class SaveBonspiel < Bonspiel::SaveOperation
 
   after_save do |bonspiel|
     SaveDraw.upsert(
-      (Math.log2(bonspiel.teams) * bonspiel.teams / bonspiel.sheets).ceil.to_i.times.map do |n|
+      Draw.count_for(bonspiel.teams, bonspiel.sheets).times.map do |n|
         {
           sequence: n.to_i16 + 1,
           bonspiel_id: bonspiel.id,

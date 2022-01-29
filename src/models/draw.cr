@@ -7,6 +7,10 @@ class Draw < BaseModel
     has_many games : Game
   end
 
+  def self.count_for(teams : Int16, sheets : Int16)
+    (Math.log2(teams) * teams / sheets / 2).ceil.to_i
+  end
+
   def start_at : Time
     previous_def || Time.utc
   end
