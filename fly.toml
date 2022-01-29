@@ -23,14 +23,14 @@ processes = []
   protocol = "tcp"
   script_checks = []
 
-  [[services.http_checks]]
-    interval = 10000
-    grace_period = "5s"
-    method = "get"
-    path = "/ping"
-    protocol = "http"
-    timeout = 2000
-    tls_skip_verify = false
+  # [[services.http_checks]]
+  #   interval = 10000
+  #   grace_period = "5s"
+  #   method = "get"
+  #   path = "/ping"
+  #   protocol = "http"
+  #   timeout = 2000
+  #   tls_skip_verify = false
 
   [services.concurrency]
     hard_limit = 25
