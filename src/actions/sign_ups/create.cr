@@ -9,7 +9,7 @@ class SignUps::Create < BrowserAction
         Authentic.redirect_to_originally_requested_path(self, fallback: Home::Index)
       else
         flash.info = "Couldn't sign you up"
-        html NewPage, operation: operation
+        html_with_status NewPage, 418, operation: operation
       end
     end
   end
