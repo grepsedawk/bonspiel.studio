@@ -4,6 +4,7 @@ class SaveDraw < Draw::SaveOperation
   #
   permit_columns start_at
   upsert_lookup_columns :bonspiel_id, :start_at
+  upsert_unique_on :bonspiel_id, :sequence
 
   before_save do
     start_at.value = start_at.value.try do |time|

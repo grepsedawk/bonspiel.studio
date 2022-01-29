@@ -1,9 +1,14 @@
 class Draw < BaseModel
   table do
-    column start_at : Time
+    column start_at : Time?
+    column sequence : Int16
     belongs_to bonspiel : Bonspiel
 
     has_many games : Game
+  end
+
+  def start_at : Time
+    previous_def || Time.utc
   end
 
   def games!
@@ -17,7 +22,7 @@ class Draw < BaseModel
   end
 
   def to_s
-    start_at.in(Time::Location.load("America/Chicago")).to_s
+    "Draw #{sequence} @ " + start_at.in(Time::Location.load("America/Chicago")).to_s
   end
 
   memoize def previous : Draw?
