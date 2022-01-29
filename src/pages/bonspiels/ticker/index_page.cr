@@ -6,23 +6,24 @@ class Bonspiels::Ticker::IndexPage < ScoreboardLayout
   def content
     div class: "relative" do
       div class: "top-full animate-marquee whitespace-nowrap" do
-      games.each do |game|
-        div class: "text-center inline-flex mr-3" do
-          div class: "btn-group flex-none" do
-            hammer_button if game.team_a_hammer?
-            div game.team_a_name.to_s, class: "btn btn-lg animate-none"
-            div game.team_a_score.to_s, class: "btn btn-lg btn-error animate-none"
-          end
-          div "#{ordinal(game.current_end)} End", class: "btn btn-lg flex-none animate-none"
-          div "#{ordinal(game.sheet)} Sheet", class: "btn btn-lg flex-none animate-none"
-          div class: "btn-group flex-none" do
-            div game.team_b_score.to_s, class: "btn btn-lg btn-warning animate-none"
-            div game.team_b_name.to_s, class: "btn-lg btn animate-none"
-            hammer_button if game.team_b_hammer?
+        games.each do |game|
+          div class: "text-center inline-flex mr-3" do
+            div class: "btn-group flex-none" do
+              hammer_button if game.team_a_hammer?
+              div game.team_a_name.to_s, class: "btn btn-lg animate-none"
+              div game.team_a_score.to_s, class: "btn btn-lg btn-error animate-none"
+            end
+            div "#{ordinal(game.current_end)} End", class: "btn btn-lg flex-none animate-none"
+            div "#{ordinal(game.sheet)} Sheet", class: "btn btn-lg flex-none animate-none"
+            div class: "btn-group flex-none" do
+              div game.team_b_score.to_s, class: "btn btn-lg btn-warning animate-none"
+              div game.team_b_name.to_s, class: "btn-lg btn animate-none"
+              hammer_button if game.team_b_hammer?
+            end
           end
         end
       end
-      end end
+    end
   end
 
   def ordinal(number)
