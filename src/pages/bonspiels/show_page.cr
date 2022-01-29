@@ -32,9 +32,9 @@ class Bonspiels::ShowPage < MainLayout
   end
 
   def render_bonspiel_fields
-    strong bonspiel.start_at.in(Time::Location.load("America/Chicago")).to_s
+    strong bonspiel.start_at.in(Time::Location.load("America/Chicago")).to_s("%a %b %-d %Y")
     text " to "
-    strong bonspiel.end_at.in(Time::Location.load("America/Chicago")).to_s
+    strong bonspiel.end_at.in(Time::Location.load("America/Chicago")).to_s("%a %b %-d %Y")
   end
 
   def render_draws

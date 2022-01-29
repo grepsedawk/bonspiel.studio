@@ -17,7 +17,7 @@ class Draw < BaseModel
   end
 
   def to_s
-    start_at.in(Time::Location.load("America/Chicago")).to_s
+    start_at.in(Time::Location.load("America/Chicago")).to_s("%a %b %-d %H:%M %P")
   end
 
   memoize def previous : Draw?
