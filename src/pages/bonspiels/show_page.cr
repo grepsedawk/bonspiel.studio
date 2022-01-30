@@ -63,27 +63,27 @@ class Bonspiels::ShowPage < MainLayout
   end
 
   def render_draws
-        h2 "Draws", class: "card-title"
-        h3 "Create New Draw"
-        form_for Draws::Create.with bonspiel_id: bonspiel.id do
-          div class: "relative max-w-xs" do
-            datetime_input(
-              SaveDraw.new.start_at,
-              value: bonspiel.start_at.to_json.strip('"').strip("Z"),
-              min: bonspiel.start_at.to_json.strip('"').strip("Z"),
-              max: bonspiel.end_at.to_json.strip('"').strip("Z"),
-              class: "w-full pr-16 input input-primary input-bordered"
-            )
-            submit "Add Draw", data_disable_with: "Saving...", class: "absolute top-0 right-0 rounded-l-none btn btn-primary"
-          end
-        end
+    h2 "Draws", class: "card-title"
+    h3 "Create New Draw"
+    form_for Draws::Create.with bonspiel_id: bonspiel.id do
+      div class: "relative max-w-xs" do
+        datetime_input(
+          SaveDraw.new.start_at,
+          value: bonspiel.start_at.to_json.strip('"').strip("Z"),
+          min: bonspiel.start_at.to_json.strip('"').strip("Z"),
+          max: bonspiel.end_at.to_json.strip('"').strip("Z"),
+          class: "w-full pr-16 input input-primary input-bordered"
+        )
+        submit "Add Draw", data_disable_with: "Saving...", class: "absolute top-0 right-0 rounded-l-none btn btn-primary"
+      end
+    end
 
-        ul do
-          bonspiel.draws.each do |draw|
-            li do
-              link draw.to_s, to: ::Draws::Show.with(draw_id: draw.id), class: "link"
-            end
-          end
+    ul do
+      bonspiel.draws.each do |draw|
+        li do
+          link draw.to_s, to: ::Draws::Show.with(draw_id: draw.id), class: "link"
+        end
+      end
     end
   end
 end
