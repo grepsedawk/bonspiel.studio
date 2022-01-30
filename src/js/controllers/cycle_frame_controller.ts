@@ -13,8 +13,8 @@ export default class extends Controller {
           return
         }
 
-        if (!frames[i].classList.contains('hidden')) {
-          frames[i].classList.add("hidden")
+        if (!frame.classList.contains('hidden')) {
+          frame.classList.add("hidden")
           showNext = true
           if (i === frames.length - 1) {
             this.#showFrame(frames[0])
