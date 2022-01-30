@@ -6,11 +6,21 @@ class Bonspiels::ShowPage < MainLayout
     render_breadcrumbs
     div class: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" do
       div class: "card shadow-2xl" do
-        render_actions
-        render_bonspiel_fields
+        div class: "card-body" do
+          render_actions
+          render_bonspiel_fields
+        end
       end
-      render_stream_links
-      render_draws
+      div class: "card shadow-2xl" do
+        div class: "card-body" do
+          render_draws
+        end
+      end
+      div class: "card shadow-2xl" do
+        div class: "card-body" do
+          render_stream_links
+        end
+      end
     end
   end
 
@@ -43,20 +53,17 @@ class Bonspiels::ShowPage < MainLayout
   end
 
   def render_stream_links
-    div class: "card shadow-2xl" do
-      para "Straming Links:"
-      div do
-        link "Scoreboard", Bonspiels::Scoreboard::Index.with(bonspiel), target: "_blank", class: "link"
-      end
-      div do
-        link "Ticker", Bonspiels::Ticker::Index.with(bonspiel), target: "_blank", class: "link"
-      end
+    h2 "Stream Links", class: "card-title"
+    div do
+      link "Scoreboard", Bonspiels::Scoreboard::Index.with(bonspiel), target: "_blank", class: "link"
+    end
+    div do
+      link "Ticker", Bonspiels::Ticker::Index.with(bonspiel), target: "_blank", class: "link"
     end
   end
 
   def render_draws
-    div class: "card shadow-2xl" do
-      div class: "card-body" do
+        h2 "Draws", class: "card-title"
         h3 "Create New Draw"
         form_for Draws::Create.with bonspiel_id: bonspiel.id do
           div class: "relative max-w-xs" do
@@ -77,8 +84,6 @@ class Bonspiels::ShowPage < MainLayout
               link draw.to_s, to: ::Draws::Show.with(draw_id: draw.id), class: "link"
             end
           end
-        end
-      end
     end
   end
 end
