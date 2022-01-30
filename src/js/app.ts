@@ -14,6 +14,7 @@ import DateRangeController from "./controllers/date_range_controller";
 import ToggleController from "./controllers/toggle_controller";
 import AutoSaveInputController from "./controllers/auto_save_input_controller";
 import RefreshController from "./controllers/refresh_controller";
+import CycleFrameController from "./controllers/cycle_frame_controller";
 
 declare global {
   interface Window {
@@ -28,3 +29,4 @@ Stimulus.register("removable", RemovableController);
 Stimulus.register("date_range", DateRangeController);
 Stimulus.register("autoSaveInput", AutoSaveInputController);
 Stimulus.register("refresh", RefreshController);
+Stimulus.register("cycleFrame", CycleFrameController);
