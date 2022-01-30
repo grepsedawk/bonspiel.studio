@@ -7,7 +7,7 @@ class Bonspiels::Ticker::ShowPage < Bonspiels::Scoreboard::IndexPage
           div game.team_a_name.to_s, class: "flex-1 btn"
           div game.team_a_score.to_s, class: "btn"
         end
-        div "#{ordinal(game.current_end)} End", class: "btn"
+        div current_end_display(game.current_end), class: "btn animate-none"
         div "Sheet #{game.sheet}", class: "btn"
         div class: "btn-group flex-1 flex" do
           div game.team_b_score.to_s, class: "btn"

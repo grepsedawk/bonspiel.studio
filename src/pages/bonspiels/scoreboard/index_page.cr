@@ -9,13 +9,17 @@ class Bonspiels::Scoreboard::IndexPage < ScoreboardLayout
         div game.team_a_name.to_s, class: "flex-1 btn animate-none"
         div game.team_a_score.to_s, class: "btn btn-error animate-none"
       end
-      div "#{ordinal(game.current_end)} End", class: "btn animate-none"
+      div current_end_display(game.current_end), class: "btn animate-none"
       div class: "btn-group flex-1 flex" do
         div game.team_b_score.to_s, class: "btn btn-warning animate-none"
         div game.team_b_name.to_s, class: "flex-1 btn animate-none"
         hammer_button if game.team_b_hammer?
       end
     end
+  end
+
+  def current_end_display(end_number)
+    game.final? ? "Final" : "#{ordinal(end_number)} End"
   end
 
   def ordinal(number)
