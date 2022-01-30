@@ -14,7 +14,7 @@ export default class extends Controller {
         }
 
         if (!frame.classList.contains('hidden')) {
-          frame.classList.add("hidden")
+          setTimeout(() => frame.classList.add("hidden"), 1000)
           showNext = true
           if (i === frames.length - 1) {
             this.#showFrame(frames[0])

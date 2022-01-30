@@ -6,13 +6,13 @@ module.exports = {
   theme: {
     extend: {
         animation: {
-            marquee: 'marquee 31s linear infinite',
+            'slide-in': 'slide-in 1.0s ease-in-out',
         },
         keyframes: {
-            marquee: {
-                '0%': { transform: 'translateX(100%)' },
-                '100%': { transform: 'translateX(-250%)' },
-            }
+            'slide-in': {
+                '0%': { transform: 'translateY(100%)' },
+                '100%': { transform: 'translateY(0%)' }
+            },
         },
         colors: {
             primary: colors.rose,
