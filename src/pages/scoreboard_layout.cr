@@ -14,6 +14,7 @@ abstract class ScoreboardLayout
       head do
         css_link asset("css/app.css")
         js_link asset("js/app.js"), defer: "true"
+        tag "style", ".turbo-progress-bar { visibility: hidden; }"
       end
       body data_controller: "refresh", data_refresh_interval_value: refresh_time.to_i * 1000 do
         main do
