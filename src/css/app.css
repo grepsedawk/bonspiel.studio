@@ -22,8 +22,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 @responsive {
-    .btn-xl {
-        @apply px-6 h-16 min-h-16;
+    .scoreboard .btn {
         font-size: 1.35rem;
     }
 }
