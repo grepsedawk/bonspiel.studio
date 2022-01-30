@@ -22,7 +22,7 @@ class Draws::Switcher < BaseComponent
 
   def previous_draw_button
     if previous = draw.previous
-      link "👈", Draws::Show.with(previous.id), class: "btn"
+      link "👈", Draws::Show.with(previous.id), class: "btn", target: "_top"
     else
       div class: "btn btn-disabled" { text "👈" }
     end
@@ -30,7 +30,7 @@ class Draws::Switcher < BaseComponent
 
   def next_draw_button
     if next_draw = draw.next
-      link "👉", Draws::Show.with(next_draw.id), class: "btn"
+      link "👉", Draws::Show.with(next_draw.id), class: "btn", target: "_top"
     else
       div class: "btn btn-disabled" { text "👉" }
     end
