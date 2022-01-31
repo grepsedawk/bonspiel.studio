@@ -61,11 +61,13 @@ class Bonspiels::ShowPage < MainLayout
 
   def render_stream_links
     h2 "Stream Links", class: "card-title"
-    div do
-      link "Scoreboard", Bonspiels::Scoreboard::Index.with(bonspiel), target: "_blank", class: "link"
-    end
-    div do
-      link "Ticker", Bonspiels::Ticker::Index.with(bonspiel), target: "_blank", class: "link"
+    ul data_controller: "clipboard" do
+      li do
+        link "Scoreboard", Bonspiels::Scoreboard::Index.with(bonspiel), data_action: "click->clipboard#copy", target: "_blank", class: "link"
+      end
+      li do
+        link "Ticker", Bonspiels::Ticker::Index.with(bonspiel), data_action: "click->clipboard#copy", target: "_blank", class: "link"
+      end
     end
   end
 
