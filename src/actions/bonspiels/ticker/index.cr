@@ -5,7 +5,10 @@ class Bonspiels::Ticker::Index < BrowserAction
     bonspiel = BonspielQuery.find(bonspiel_id)
 
     bonspiel.presenting_game!.try do |game|
-      return html Bonspiels::Ticker::IndexPage, games: GameQuery.new.draw_id(game.draw_id).sheet.asc_order
+      return html Bonspiels::Ticker::IndexPage, games: GameQuery.new
+        .draw_id(game.draw_id)
+        .id.not.eq(game.id)
+        .sheet.asc_order
     end
 
     head 200
