@@ -32,13 +32,11 @@ class Games::EditCard < BaseComponent
               div class: "stat-desc" do
                 text "Good Curling!"
               end
-              if game.final?
-                form_for Games::Update.with(game.id), class: "stat-actions" do
+              form_for Games::Update.with(game.id), class: "stat-actions" do
+                if game.final?
                   hidden_input operation.final, value: false
                   submit "Unfinalize", class: "btn btn-ghost", data_confirm: "Are you sure you want to unfinalize this game?"
-                end
-              else
-                form_for Games::Update.with(game.id), class: "stat-actions" do
+                else
                   hidden_input operation.final, value: true
                   submit "Finalize", class: "btn btn-secondary", data_confirm: "Are you sure you want to finalize this game?"
                 end
@@ -50,7 +48,7 @@ class Games::EditCard < BaseComponent
               mount Games::AutoSavingInput, operation.team_b_club_name, game: game, append_class: "stat-desc", placeholder: "Club Name"
               form_for Games::Update.with(game.id), class: "stat-actions" do
                 hidden_input operation.team_a_hammer, value: false
-                submit "Hammer", class: "btn #{game.team_b_hammer? ? "btn-primary" : ""}", disabled: game.final?
+                submit "Hammer", class: "btn #{game.team_b_hammer? ? "btn-primary" : ""} #{disabled_class}"
               end
             end
           end
