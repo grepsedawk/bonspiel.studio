@@ -2,3 +2,7 @@ dependencies:
   avram:
     github: robcole/avram
     branch: add-bulk-upsert-to-lucky
+
+  pg:
+    github: will/crystal-pg
+    version: ~> 0.26

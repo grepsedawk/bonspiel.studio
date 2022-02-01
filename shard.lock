@@ -47,7 +47,7 @@ shards:
 
   db:
     git: https://github.com/crystal-lang/crystal-db.git
-    version: 0.10.1
+    version: 0.11.0
 
   dexter:
     git: https://github.com/luckyframework/dexter.git
@@ -93,9 +93,9 @@ shards:
     git: https://github.com/spider-gazelle/openssl_ext.git
     version: 2.1.5
 
-  pg:
+  pg: # Overridden
     git: https://github.com/will/crystal-pg.git
-    version: 0.24.0
+    version: 0.26.0
 
   pulsar:
     git: https://github.com/luckyframework/pulsar.git
