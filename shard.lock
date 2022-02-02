@@ -15,7 +15,7 @@ shards:
 
   avram: # Overridden
     git: https://github.com/robcole/avram.git
-    version: 0.22.0+git.commit.b9865cf2437ea31cddce2be94b9f1438c1302c57
+    version: 0.22.0+git.commit.da6d8db7122f1de67e708e6997fbde099c1293d0
 
   backtracer:
     git: https://github.com/sija/backtracer.cr.git
@@ -93,7 +93,7 @@ shards:
     git: https://github.com/spider-gazelle/openssl_ext.git
     version: 2.1.5
 
-  pg: # Overridden
+  pg:
     git: https://github.com/will/crystal-pg.git
     version: 0.26.0
 
