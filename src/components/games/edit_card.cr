@@ -10,10 +10,10 @@ class Games::EditCard < BaseComponent
           form_for Games::Presenting::Update.with(game.id), data_turbo_frame: "draw-#{draw.id}-games" do
             if game.presenting?
               hidden_input SaveBonspiel.new(game.bonspiel!).presenting_game_id, value: ""
-              submit "Present!", class: "#{disabled_class} btn btn-success"
+              submit "Present!", class: "btn btn-success"
             else
               hidden_input SaveBonspiel.new(game.bonspiel!).presenting_game_id, value: game.id
-              submit "Present!", class: "#{disabled_class} btn btn-error"
+              submit "Present!", class: "btn btn-error"
             end
           end
           div class: "stats md:grid-flow-col grid-flow-row mt-3" do
