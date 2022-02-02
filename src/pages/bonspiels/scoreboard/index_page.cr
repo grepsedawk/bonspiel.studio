@@ -4,13 +4,13 @@ class Bonspiels::Scoreboard::IndexPage < ScoreboardLayout
 
   def content
     div class: "scoreboard flex text-center gap-2" do
-      div class: "btn-group flex-1 flex" do
+      div class: "btn-group flex-1 flex flex-nowrap" do
         hammer_button if game.team_a_hammer?
         div game.team_a_name.to_s, class: "flex-1 btn animate-none"
         div game.team_a_score.to_s, class: "btn btn-error animate-none"
       end
       div current_end_display(game.current_end), class: "btn animate-none"
-      div class: "btn-group flex-1 flex" do
+      div class: "btn-group flex-1 flex flex-nowrap" do
         div game.team_b_score.to_s, class: "btn btn-warning animate-none"
         div game.team_b_name.to_s, class: "flex-1 btn animate-none"
         hammer_button if game.team_b_hammer?

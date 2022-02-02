@@ -4,7 +4,7 @@ class Bonspiels::Ticker::IndexPage < ScoreboardLayout
   quick_def :refresh_time, 10.minutes
 
   def content
-    tag "turbo-frame", data_controller: "cycleFrame", class: "grid h-fit overflow-hidden" do
+    tag "turbo-frame", data_controller: "cycleFrame", class: "grid h-fit overflow-y-clip" do
       games.each_with_index do |game, index|
         tag "turbo-frame", id: "game-scoreboard-#{game.id}", src: Bonspiels::Ticker::Show.with(game.id).path, class: "#{hidden(index > 0)} col-start-1 row-start-1"
       end
