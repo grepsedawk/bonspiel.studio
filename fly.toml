@@ -8,7 +8,6 @@ processes = []
 
 [deploy]
   release_command = "lucky db.migrate"
-  strategy = "bluegreen"
 
 [env]
   LUCKY_ENV = "production"
