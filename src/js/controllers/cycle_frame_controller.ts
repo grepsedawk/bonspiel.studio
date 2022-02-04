@@ -21,7 +21,7 @@ export default class extends Controller {
           }
         }
       }
-    }, 3000)
+    }, 4000)
   }
 
   disconnect() {
