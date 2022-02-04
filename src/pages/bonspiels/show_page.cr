@@ -68,6 +68,9 @@ class Bonspiels::ShowPage < MainLayout
       li do
         link "Ticker", Bonspiels::Ticker::Index.with(bonspiel), data_action: "click->clipboard#copy", target: "_blank", class: "link"
       end
+      li do
+        link "Overview", Bonspiels::Overview::Index.with(bonspiel), data_action: "click->clipboard#copy", target: "_blank", class: "link"
+      end
     end
   end
 

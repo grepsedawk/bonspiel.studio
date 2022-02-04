@@ -24,3 +24,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .scoreboard .btn {
     font-size: 1.35rem;
 }
+
+.animate-none-all * {
+    animation: none;
+}
