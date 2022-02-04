@@ -1,7 +1,7 @@
 class Bonspiels::Ticker::ShowPage < Bonspiels::Scoreboard::IndexPage
   def content
     tag "turbo-frame", id: "game-scoreboard-#{game.id}" do
-      div class: "scoreboard sm:space-y-1 sm:flex gap-2 animate-slide-in w-screen" do
+      div class: "scoreboard space-y-1 sm:space-y-0 sm:flex gap-2 animate-slide-in w-screen" do
         div "Sheet #{game.sheet}", class: "btn"
         div "End #{game.current_end}", class: "btn"
         div class: "btn-group min-w-0 flex-1 flex-nowrap" do
