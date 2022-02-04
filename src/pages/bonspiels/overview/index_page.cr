@@ -4,7 +4,7 @@ class Bonspiels::Overview::IndexPage < ScoreboardLayout
 
   def content
     div class: "space-y-3 opacity-80" do
-      games.each_with_index do |game, index|
+      games.each do |game|
         tag "turbo-frame", class: "animate-none-all block", id: "game-scoreboard-#{game.id}", src: Bonspiels::Ticker::Show.with(game.id).path
       end
     end
