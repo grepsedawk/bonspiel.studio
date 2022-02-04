@@ -17,9 +17,6 @@ module.exports = {
         colors: {
             primary: colors.rose,
         },
-        fontFamily: {
-            sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-        },
     },
   },
   plugins: [

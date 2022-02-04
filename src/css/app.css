@@ -21,8 +21,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: auto;
 }
 
-@responsive {
-    .scoreboard .btn {
-        font-size: 1.35rem;
-    }
+.scoreboard .btn {
+    font-size: 1.35rem;
 }
