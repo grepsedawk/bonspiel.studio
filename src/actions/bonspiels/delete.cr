@@ -3,7 +3,7 @@ class Bonspiels::Delete < BrowserAction
     bonspiel = BonspielQuery.for(current_user).find(bonspiel_id)
     DeleteBonspiel.delete(bonspiel) do |_operation, _deleted|
       flash.success = "Deleted the bonspiel"
-      redirect Index
+      redirect Dashboard::Index
     end
   end
 end

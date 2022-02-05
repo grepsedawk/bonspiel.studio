@@ -29,9 +29,6 @@ class Bonspiels::ShowPage < MainLayout
   def render_breadcrumbs
     mount Shared::Breadcrumbs do
       li do
-        link "Bonspiels", Bonspiels::Index
-      end
-      li do
         link "Bonspiel: #{bonspiel.name}", Bonspiels::Show.with(bonspiel.id)
       end
     end
