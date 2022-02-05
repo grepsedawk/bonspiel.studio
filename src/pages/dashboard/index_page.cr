@@ -22,7 +22,6 @@ class Dashboard::IndexPage < MainLayout
             end
             div class: "card-actions" do
               link "New Bonspiel", to: Bonspiels::New, class: "btn btn-primary"
-              link "See All", to: Bonspiels::Index, class: "btn btn-ghost"
             end
           end
         end
