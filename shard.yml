@@ -28,6 +28,8 @@ dependencies:
     version: ~> 1.6.0
   carbon_sendgrid_adapter:
     github: luckyframework/carbon_sendgrid_adapter
+  pundit:
+    github: stephendolan/pundit
   raven:
     github: Sija/raven.cr
 

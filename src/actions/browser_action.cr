@@ -2,6 +2,8 @@ abstract class BrowserAction < Lucky::Action
   include Lucky::ProtectFromForgery
   accepted_formats [:html, :json], default: :html
 
+  include Pundit::ActionHelpers(User)
+
   # By default all actions are required to use underscores.
   # Add 'include Lucky::SkipRouteStyleCheck' to your actions if you wish to ignore this check for specific routes.
   include Lucky::EnforceUnderscoredRoute
