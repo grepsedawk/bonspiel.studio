@@ -28,6 +28,14 @@ class Errors::Show < Lucky::ErrorAction
     end
   end
 
+  def render(error : Pundit::NotAuthorizedError)
+    if html?
+      error_html "Sorry, you're not authorized to access that", status: 401
+    else
+      error_json "Not authorized", status: 401
+    end
+  end
+
   # Always keep this below other 'render' methods or it may override your
   # custom 'render' methods.
   def render(error : Lucky::RenderableError)
