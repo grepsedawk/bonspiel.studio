@@ -5,14 +5,14 @@ class Bonspiels::Ticker::ShowPage < Bonspiels::Scoreboard::IndexPage
         div "Sheet #{game.sheet}", class: "btn"
         div current_end_display(game.current_end), class: "btn"
         div class: "btn-group min-w-0 flex-1 flex-nowrap" do
-          hammer_button game.team_a_hammer?
+          hammer_button game.team_a_hammer? && !game.final?
           div class: "flex-1 min-w-0 btn" do
             div game.team_a_name.to_s, class: "truncate"
           end
           div game.team_a_score.to_s, class: "btn"
         end
         div class: "btn-group min-w-0 flex-1 flex-nowrap" do
-          hammer_button game.team_b_hammer?
+          hammer_button game.team_b_hammer? && !game.final?
           div class: "flex-1 min-w-0 btn" do
             div game.team_b_name.to_s, class: "truncate"
           end
