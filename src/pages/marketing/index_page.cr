@@ -20,8 +20,8 @@ class Marketing::IndexPage < AuthLayout
             text "'s solution for streaming scoreboard standings using OBS Browser Sources."
           end
           div class: "card-actions" do
-            link "Sign Up", SignUps::New, class: "btn glass rounded-full", flow_id: "sign-up-button"
-            link "Sign In", SignIns::New, class: "btn glass rounded-full", flow_id: "sign-in-button"
+            link "Sign Up", SignUps::New, class: "btn rounded-full", flow_id: "sign-up-button"
+            link "Sign In", SignIns::New, class: "btn rounded-full", flow_id: "sign-in-button"
           end
         end
       end
