@@ -12,7 +12,7 @@
     "daisyui": "^1.25.4",
     "esbuild": "^0.14.22",
     "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.22"
+    "tailwindcss": "^3.0.23"
   },
   "scripts": {
     "heroku-postbuild": "yarn prod",
