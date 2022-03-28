@@ -483,10 +483,10 @@ cssesc@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz"
 
-daisyui@^2.13.0:
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-2.13.0.tgz#2e667431e9f635c242b17a3438461904cfb63022"
-  integrity sha512-f5Ju0ERSeTwUl29HCMsDEPSiSkGfz3UvLthKB6cMhrVOm8XsZgbjRRAIwE6arKTnzo4UCHaw+XE37XAzHaLxiA==
+daisyui@^2.13.4:
+  version "2.13.4"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-2.13.4.tgz#e641a2cf99029f3cd2263b778e65583361953fad"
+  integrity sha512-seLNXMqOV0C2VigLi2OSmVm7LOr+ZcbnHW5f1byjWNhCc0DU8eX/Xc+aqPOynRnofAZ8igciKq6qmAYunewPAQ==
   dependencies:
     color "^4.2"
     css-selector-tokenizer "^0.8.0"
