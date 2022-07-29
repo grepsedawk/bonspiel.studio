@@ -10,7 +10,7 @@
     "@tailwindcss/typography": "^0.5.4",
     "autoprefixer": "^10.4.7",
     "daisyui": "^2.20.0",
-    "esbuild": "^0.14.50",
+    "esbuild": "^0.14.51",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.6"
   },
