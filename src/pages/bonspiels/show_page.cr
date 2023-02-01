@@ -60,6 +60,9 @@ class Bonspiels::ShowPage < MainLayout
     h2 "Stream Links", class: "card-title"
     ul data_controller: "clipboard" do
       li do
+        link "Title", Bonspiels::Title::Index.with(bonspiel), data_action: "click->clipboard#copy", target: "_blank", class: "link"
+      end
+      li do
         link "Scoreboard", Bonspiels::Scoreboard::Index.with(bonspiel), data_action: "click->clipboard#copy", target: "_blank", class: "link"
       end
       li do
