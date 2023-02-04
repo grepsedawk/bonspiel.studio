@@ -7,7 +7,6 @@ class Bonspiels::Ticker::Index < BrowserAction
     bonspiel.presenting_game!.try do |game|
       return html Bonspiels::Ticker::IndexPage, games: GameQuery.new
         .draw_id(game.draw_id)
-        .id.not.eq(game.id)
         .sheet.asc_order
     end
 
