@@ -1,6 +1,6 @@
 class BonspielPolicy < ApplicationPolicy(Bonspiel)
   def index?
-    true # TODO
+    true
   end
 
   def show?
@@ -8,14 +8,14 @@ class BonspielPolicy < ApplicationPolicy(Bonspiel)
   end
 
   def create?
-    true # TODO
+    !user.nil?
   end
 
   def update?
-    true # TODO
+    record.try &.owner_id == user.try &.id
   end
 
   def delete?
-    true # TODO
+    record.try &.owner_id == user.try &.id
   end
 end
